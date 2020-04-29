@@ -10,6 +10,42 @@ namespace Sandbox
     {
         // member variables (HAS A)
         private T[] items;
+        private int count;
+        private int capacity;
+        public T this[int index]
+        {
+            get
+            {
+                if (index < count && index >= 0)
+                {
+                    return items[index];
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+            }
+            set
+            {
+                items[index] = value;
+            }
+        }
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
 
         // constructor (SPAWNER)
         public CustomList()
@@ -22,5 +58,11 @@ namespace Sandbox
         {
 
         }
+
+        public void Remove(T item)
+        {
+
+        }
+
     }
 }

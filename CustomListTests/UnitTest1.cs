@@ -184,7 +184,7 @@ namespace CustomListTests
             testList.Add(iteamToCheck3);
             testList.Add(iteamToCheck4);
             testList.Remove(iteamToCheck2);
-            actual = testList.Campcity;
+            actual = testList.Capacity;
 
             //assert
             Assert.AreEqual(expected, actual);
