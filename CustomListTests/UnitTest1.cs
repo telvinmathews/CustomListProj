@@ -85,14 +85,19 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
-
+        [TestMethod]
         public void Add_AddMutipleValuesToList_CheckIfFirstIndexRemainsTheSame()
         {
             //arrange
             CustomList<int> testList = new CustomList<int>();
             int iteamToCheck1 = 10;
             int iteamToCheck2 = 11;
-            int iteamToCheck3 = 12;
+            int iteamToCheck3 = 13;
+            int iteamToCheck4 = 14;
+            int iteamToCheck5 = 15;
+            int iteamToCheck6 = 16;
+            int iteamToCheck7= 17;
+            int iteamToCheck8 = 18;
             int expected = 10;
             int actual;
 
@@ -100,11 +105,18 @@ namespace CustomListTests
             testList.Add(iteamToCheck1);
             testList.Add(iteamToCheck2);
             testList.Add(iteamToCheck3);
+            testList.Add(iteamToCheck4);
+            testList.Add(iteamToCheck5);
+            testList.Add(iteamToCheck6);
+            testList.Add(iteamToCheck7);
+            testList.Add(iteamToCheck8);
             actual = testList[0];
 
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
         public void Remove_AddMutipleValuesToList_CheckIfTheValueAtSecondIndexIsRemoved()
         {
             //arrange
@@ -125,6 +137,7 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Remove_RemoveItemFromList_CheckIfTheFirstInstanceOfTheValueIsRemoved()
         {
             //arrange
@@ -146,6 +159,7 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Remove_RemoveItemFromList_CheckIfCountDecrease()
         {
             //arrange
@@ -161,12 +175,14 @@ namespace CustomListTests
             testList.Add(iteamToCheck1);
             testList.Add(iteamToCheck2);
             testList.Add(iteamToCheck3);
+            testList.Add(iteamToCheck4);
             testList.Remove(iteamToCheck2);
             actual = testList.Count;
 
             //assert
             Assert.AreEqual(expected, actual);
-        } 
+        }
+        [TestMethod]
         public void Remove_RemoveItemFromList_CheckIfCampcityIsTheSame()
         {
             //arrange
@@ -189,6 +205,7 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Remove_RemoveItemFromList_CheckIfIndexIsShifted()
         {
             //arrange

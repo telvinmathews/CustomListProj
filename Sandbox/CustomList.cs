@@ -10,6 +10,7 @@ namespace Sandbox
     {
         // member variables (HAS A)
         private T[] items;
+        private T[] moreitems;
         private int count;
         private int capacity;
         public T this[int index]
@@ -50,23 +51,30 @@ namespace Sandbox
         // constructor (SPAWNER)
         public CustomList()
         {
-            items = new T[capacity];
             count = 0;
             capacity = 4;
+            items = new T[capacity];
         }
 
         // member methods (CAN DO)
+        // MyCustomList customList = new MyCustomList();
+        //customList.Add();
         public void Add(T item)
         {
+            //what if my capacity reach its limit?
+            if (count == capacity)
+            {
+                capacity *= 2;
+                moreitems = new T[capacity *= 2];
+            }
             items[count] = item;
             count++;
-
         }
 
         public void Remove(T item)
         {
-
+            items[count] = item;
+            count--;
         }
-
     }
 }
