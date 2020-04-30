@@ -10,9 +10,10 @@ namespace Sandbox
     {
         // member variables (HAS A)
         private T[] items;
-        private T[] moreitems;
         private int count;
         private int capacity;
+        
+
         public T this[int index]
         {
             get
@@ -62,19 +63,26 @@ namespace Sandbox
         public void Add(T item)
         {
             //what if my capacity reach its limit?
+            
             if (count == capacity)
             {
                 capacity *= 2;
-                moreitems = new T[capacity *= 2];
+                T[] moreitems = new T[capacity];
+                for (int i = 0; i < items.Length; i++)
+                {
+                    moreitems[i] = items[i];
+                }
+                items = moreitems;
             }
             items[count] = item;
             count++;
+
         }
 
         public void Remove(T item)
         {
-            items[count] = item;
             count--;
+            items[count] = item;
         }
     }
 }
