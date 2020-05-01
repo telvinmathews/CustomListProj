@@ -81,8 +81,15 @@ namespace Sandbox
 
         public void Remove(T item)
         {
-            count--;
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i].Equals(item))
+                {
+                    continue;
+                }
+            }
             items[count] = item;
+            count--;
         }
     }
 }
